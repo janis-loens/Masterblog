@@ -10,12 +10,30 @@ h1 {
     color: #4F4F4F;
 }
 
+.post-wrapper {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
 .post {
     background-color: #FFF;
     border: 1px solid #DDD;
     padding: 20px;
-    margin-bottom: 20px;
     border-radius: 8px;
+    width: 75%;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.button-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* space between buttons */
+}
+
+.delete-form {
+    margin: 0;
 }
 
 .post h2 {
@@ -23,5 +41,24 @@ h1 {
 }
 
 .post p {
+    margin: 10px 0;
+}
+
+.top-align {
+    vertical-align: top;
+}
+
+.right-align {
+    text-align: right;
+    padding: 10px;
+}
+
+.wide-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.top-button {
+    padding:5px;
     margin: 10px 0;
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Update Blog Post</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h2>Update the blog post:</h2>
+        <form action="{{ url_for('update', post_id=post['id']) }}" method="POST">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="author">Author:</label>
+                        </td>
+                        <td>
+                            <input type="text" class="wide-input" id="author" name="author" size="61.5", value="{{ post['author'] }}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="post_title">Title:</label>
+                        </td>
+                        <td>
+                            <input type="text" class="wide-input" id="post_title" name="post_title" size ="61.5", value="{{ post['title'] }}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="top-align">
+                            <label for="post_content">Content:</label>
+                        </td>
+                        <td>
+                            <textarea class="wide-input" id="post_content" name="post_content" rows="5" cols="50" required>{{ post['content'] }}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="right-align">
+                            <input type="submit" value="submit">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>

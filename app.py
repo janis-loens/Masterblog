@@ -9,20 +9,27 @@ app = Flask(__name__)
 root_dir = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
 json_path = root_dir / "storage" / "storage.json"
 
-def read_storage_json() -> list:
+def read_storage_json() -> list[dict]:
+    """Open, read and close the storage.json file to retrieve all posts.
+    Args:
+        None
+    Returns:
+        list: The a list of dictionaries containing information about the posts.
+    """
     with json_path.open("r", encoding="utf-8") as file:
         posts = json.load(file)
     return posts
 
 
-def write_storage_json(content) -> None:
+def write_storage_json(content: list) -> None:
+    """Open, write and close the storage.json file to retrieve all posts.
+    Args:
+        content(list): The content to be written into the json file.
+    Returns:
+        None
+    """
     with json_path.open("w", encoding="utf-8") as file:
         json.dump(content, file, indent=2)
-
-
-def fetch_post_by_id(post_id):
-    read_storage_json()
-
 
 
 @app.route("/")
